@@ -1,0 +1,262 @@
+body {
+  padding-left: 20px;
+  padding-right: 20px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1{
+  border-bottom: 1px grey solid;
+}
+
+button, input, textarea {
+  border-radius: 5px;
+}
+
+.importanceStar{
+  display: inline-block;
+  font-size: 20px;
+  margin: 0;
+}
+
+/* styling for new note and update Note */
+#formForNewNote{
+  display: grid;
+  grid-template-columns: 130px 130px 130px 1fr;
+  grid-template-rows: 30px 100px 30px 30px 40px;
+}
+
+#formForUpdateNote{         /* forForUpdateNote needs to have the finished checkbox -> 1 row more than formForNewNote */
+  display: grid;
+  grid-template-columns: 130px 130px 130px 1fr;
+  grid-template-rows: 30px 100px 30px 30px 30px 40px;
+}
+
+.formForNote{
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.formForNote>label{
+  grid-column: 1/2;
+  align-self: center;
+}
+
+.formForNote>input[type="checkbox"]{
+  align-self: center
+}
+
+.formForNote>input, .formForNote>textarea{
+  grid-column: 2/5;
+}
+
+.formForNote>button{
+  grid-column: 2/3;
+}
+
+.formForNote>a{
+  grid-column: 3/4;
+}
+
+a>button{
+  height: 100%;
+  width: 100%;
+}
+
+/* setup preference buttons */
+.preferenceButton{
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* wide screen grids of index.hbs */
+@media (min-width: 39em){
+  /* setup grid for preferences */
+  .preferences{
+    display: grid;
+    height: 80px;
+    grid-template-columns: 130px 130px 130px 1fr 130px;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 5px;
+  }
+
+  #createNewNoteButton{
+    grid-area: 1/1/2/2;
+  }
+
+  #changeStyleButton{
+    grid-area: 1/5/2/6;
+  }
+
+  #sortByDueDateButtonForm{
+    grid-area: 2/1/3/2;
+  }
+
+  #sortByCreateDateButtonForm{
+    grid-area: 2/2/3/3;
+  }
+
+  #sortByImportanceButtonForm{
+    grid-area: 2/3/3/4;
+  }
+
+  #filterButton{
+    grid-area: 2/5/3/6;
+  }
+
+  /* setup grid for notes */
+  #note-article{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 130px 130px 130px 1fr 130px;
+    grid-template-rows: 30px 30px 50px;
+  }
+
+  .innerElement{
+    margin-right: 5px;
+  }
+
+  #labelForDueDate{
+    align-self: end;
+    grid-area: 1/1/2/2;
+  }
+
+  #dueDate{
+    grid-area: 2/1/3/2;
+    align-self: start;
+  }
+
+  #titleOfNote{
+    grid-area: 1/2/2/4;
+    font-weight: bold;
+  }
+
+  #importanceStars{
+    grid-area: 1/3/2/5;
+    justify-self: end;
+  }
+
+  #labelForCheckDone{
+    grid-area: 3/1/4/2;
+    justify-self: start;
+  }
+
+  #checkDone{
+    grid-area: 3/1/4/2;
+    justify-self: end;
+    margin-right: 50px;
+  }
+
+  #textInNote{
+    grid-area: 2/2/4/5;
+  }
+
+  #editForm{
+    grid-area: 2/5/4/6;
+    align-self: center;
+  }
+
+  #editButton{
+    height: 40px;
+    width: 100%;
+  }
+}
+
+/* small screen grids of index.hbs */
+@media (max-width: 39em){
+  .preferences{
+    display: grid;
+    height: 200px;
+    grid-template-columns: 130px 1fr 130px;
+    grid-template-rows: repeat(5, 40px);
+    column-gap: 0;
+    row-gap: 0;
+  }
+
+  #createNewNoteButton{
+    grid-area: 1/1/2/2;
+  }
+
+  #changeStyleButton{
+    grid-area: 1/3/2/4;
+  }
+
+  #sortByDueDateButtonForm{
+    grid-area: 2/1/3/4;
+  }
+
+  #sortByCreateDateButtonForm{
+    grid-area: 3/1/4/4;
+  }
+
+  #sortByImportanceButtonForm{
+    grid-area: 4/1/5/4;
+  }
+
+  #filterButton{
+    grid-area: 5/1/6/4;
+  }
+
+  /* setup grid for notes */
+  #note-article{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 130px 130px 1fr 130px;
+    grid-template-rows: 30px 30px 80px 40px;
+    column-gap: 0;
+    row-gap: 0;
+  }
+
+  #labelForDueDate{
+    display: none;
+  }
+
+  #dueDate{
+    grid-area: 1/1/2/2;
+    align-self: end;
+  }
+
+  #titleOfNote{
+    grid-area: 1/2/2/3;
+    justify-self: start;
+    font-weight: bold;
+  }
+
+  #importanceStars{
+    grid-area: 1/4/2/5;
+    justify-self: end;
+    align-self: end;
+  }
+
+  #labelForCheckDone{
+    grid-area: 2/1/3/2;
+    justify-self: start;
+  }
+
+  #checkDone{
+    grid-area: 2/1/3/2;
+    justify-self: end;
+    margin-right: 50px;
+  }
+
+  #textInNote{
+    grid-area: 3/1/4/5;
+  }
+
+  #editForm{
+    align-self: stretch;
+    grid-area: 4/1/5/2;
+  }
+
+  #editButton{
+    height: 100%;
+    width: 100%;
+  }
+}
+
+
+
+
+
+

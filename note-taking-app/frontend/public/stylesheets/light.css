@@ -1,0 +1,17 @@
+button, textarea, input{
+    background: white;
+    border: grey 1px solid;
+}
+
+#textInNote{
+    color: black !important;
+}
+
+.showDueDate {
+    background: white;
+    border-width: 0;
+}
+
+.sortedByThis{
+    background: lightgray;
+}

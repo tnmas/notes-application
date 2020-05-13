@@ -1,0 +1,67 @@
+<main>
+    <h1>My Notes</h1>
+    <container class="grid">
+        <section class="preferences">
+            <form action="/new" method="get" id="createNewNoteButton">
+                <button type="submit" class="preferenceButton">Create new note</button>
+            </form>
+
+            <form action="/" method="get" id="changeStyleButton">
+                <button type="submit" name="style" value="{{style}}" class="preferenceButton">Change style</button>
+            </form>
+
+            <form action="/" method="get" id="sortByDueDateButtonForm">
+                <button type="submit" name="sortBy" value="dueDate" class="preferenceButton{{sortedByDueDate}}" id="sortByDueDateButton">By finish date</button>
+            </form>
+
+            <form action="/" method="get" id="sortByCreateDateButtonForm">
+                <button type="submit" name="sortBy" value="createDate" class="preferenceButton{{sortedByCreateDate}}" id="sortByCreateDateButton">By create date</button>
+            </form>
+
+            <form action="/" method="get" id="sortByImportanceButtonForm">
+                <button type="submit" name="sortBy" value="importance" class="preferenceButton{{sortedByImportance}}" id="sortByImportanceButton">By Importance</button>
+            </form>
+
+            <form action="/" method="get" id="filterButton" class="preferenceButton">
+                {{#if hideFinished}}
+                    <button type="submit" name="hideFinished" value="false" class="preferenceButton">Show all</button>
+                {{else}}
+                    <button type="submit" name="hideFinished" value="true" class="preferenceButton">Hide finished</button>
+                {{/if}}
+            </form>
+        </section>
+
+        <section class="notes">
+            {{#each notes}}
+                <article id="note-article">
+                    {{#unless done}}                                    <!-- unless is the inverse of if -->
+                        <label for="dueDate" class="innerElement" id="labelForDueDate">dueDate</label>
+                        <input id = "dueDate" class="innerElement showDueDate" type="date" disabled="disabled" value = {{dueDate}}>
+                    {{/unless}}
+
+                    <p id="titleOfNote" class="innerElement">{{title}}</p>
+
+                    <container id="importanceStars" class="innerElement">
+                        {{#times importance}}
+                            <p class="importanceStar">&#9734;</p>
+                        {{/times}}
+                    </container>
+
+                    <label for="checkDone" id="labelForCheckDone" class="innerElement">Finished:</label>
+                    <input id="checkDone" type="checkbox" class="innerElement" disabled="disabled" {{#if done}}checked{{/if}}/>
+
+                    <textarea id="textInNote" type="text" readonly="readonly" class="innerElement" placeholder="{{description}}" required></textarea>
+
+                    <form id="editForm" action="edit/{{id}}", method="get">
+                        <button type="submit" id="editButton">Edit</button>
+                    </form>
+
+                </article>
+            {{else}}
+                <p>
+                    Keine ToDo gefunden!
+                </p>
+            {{/each}}
+        </section>
+    </container>
+</main>

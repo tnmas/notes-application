@@ -1,0 +1,26 @@
+<main>
+    <h1>Todo ändern</h1>
+    <form action="{{note.id}}" method="post" class="formForNote" id="formForUpdateNote">
+        <label for="title">Titel</label>
+        <input name="title" type="text" value="{{note.title}}" required>
+
+        <label for="description">Beschreibung</label>
+        <textarea name="description" type="text" required>{{note.description}}</textarea>
+
+        <label for="importance">Wichtigkeit</label>
+        <input name="importance" type="number" min=1 max=5 value="{{note.importance}}" required>
+
+        <input name="createDate" type="hidden" value="{{note.createDate}}"/>
+
+        <label for="dueDate">Fertig bis</label>
+        <input name="dueDate" type="date" value="{{note.dueDate}}" required>
+
+        <label for="done">Erledigt!</label>
+        <input name="done" type="checkbox" {{#if note.done}}checked{{/if}}/>
+
+        <button type="submit">Speichern</button>
+        <a href="/">
+            <button type="button">Abbruch</button>
+        </a>
+    </form>
+</main>

@@ -1,0 +1,28 @@
+*{
+    background: black;
+    color: white;
+}
+
+button, textarea, input{
+    background: blue;
+    border: white 1px solid;
+}
+
+form>textarea, form>input{
+    background: white;
+    color: black;
+}
+
+textarea{
+    color: white;
+}
+
+.showDueDate{
+    background: black;
+    border-width: 0;
+}
+
+.sortedByThis{
+    background: dodgerblue;
+}
+

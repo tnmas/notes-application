@@ -1,0 +1,19 @@
+<main>
+    <h1>Neue Todo</h1>
+    <form action="/new" method="post" class="formForNote" id="formForNewNote">
+        <label for="title">Titel</label>
+        <input name="title" type="text" required>
+
+        <label for="description">Beschreibung</label>
+        <textarea name="description" type="text" required></textarea>
+
+        <label for="importance">Wichtigkeit</label>
+        <input name="importance" type="number" min=1 max=5 required>
+
+        <label for="dueDate">Fertig bis</label>
+        <input name="dueDate" type="date" required>
+
+        <button type="submit">Anlegen</button>
+        <a href="/"><button type="button">Abbruch</button></a>
+    </form>
+</main>
