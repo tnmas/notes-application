@@ -115,7 +115,6 @@ Steps to follow to run the app:
 
 * [Express Node JS](https://expressjs.com) - The web framework used
 
-## Authors
+## Author
 
-* **Aaron Studer**
 * **Tsigereda Nebai Kidane**
