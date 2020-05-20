@@ -1,8 +1,8 @@
 const PROTO_PATH = __dirname + '/proto/note.proto';
 const grpc = require('grpc');
 const protoLoader = require('@grpc/proto-loader');
-const db = require("../../services/db");
-const dbService = require("../../services/noteStoreMongoDB");
+const db = require("../services/db");
+const dbService = require("../services/noteStoreMongoDB");
 const _ = require('lodash');
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
     keepCase: true,

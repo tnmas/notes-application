@@ -1,4 +1,5 @@
-const client = require("../public/javascripts/client");
+"use strict";
+const client = require("../../storage/client");
 
 module.exports.sessionUserSettings = (req, res, next) => {
     console.log("Wert von req.session.userSettings: " + req.session.userSettings);
