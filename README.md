@@ -114,7 +114,3 @@ Steps to follow to run the app:
 ## Built With
 
 * [Express Node JS](https://expressjs.com) - The web framework used
-
-## Author
-
-* **Tsigereda Nebai Kidane**
